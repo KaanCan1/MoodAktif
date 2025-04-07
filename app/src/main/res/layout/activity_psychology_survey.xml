@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soru burada görünecek"
+        android:textSize="20sp"
+        android:layout_marginBottom="24dp"
+        android:textAlignment="center" />
+
+    <RadioGroup
+        android:id="@+id/answerGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/option1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kesinlikle Katılmıyorum"
+            android:tag="1" />
+
+        <RadioButton
+            android:id="@+id/option2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Katılmıyorum"
+            android:tag="2" />
+
+        <RadioButton
+            android:id="@+id/option3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kararsızım"
+            android:tag="3" />
+
+        <RadioButton
+            android:id="@+id/option4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Katılıyorum"
+            android:tag="4" />
+
+        <RadioButton
+            android:id="@+id/option5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kesinlikle Katılıyorum"
+            android:tag="5" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="İleri"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF" />
+</LinearLayout>
