@@ -49,9 +49,15 @@ public class SettingsFragment extends Fragment {
 
         // Çıkış Yap Butonu
         btnLogout.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Çıkış Yapılıyor...", Toast.LENGTH_SHORT).show();
-            // Buraya çıkış işlemi eklenecekse: örn. FirebaseAuth.getInstance().signOut();
+
+
+            // Eğer oturum varsa, buraya çıkış işlemi (örneğin Firebase) eklenebilir
+            // FirebaseAuth.getInstance().signOut();
+
+            // Uygulamayı tamamen kapat
+            requireActivity().finishAffinity(); // Tüm aktiviteleri sonlandırır
         });
+
 
         return view;
     }
