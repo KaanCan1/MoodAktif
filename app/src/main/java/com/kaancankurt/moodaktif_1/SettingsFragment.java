@@ -37,9 +37,10 @@ public class SettingsFragment extends Fragment {
 
         // Profil Güncelleme Butonu
         btnUpdateProfile.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "Profil Güncelleme Sayfası Açılacak", Toast.LENGTH_SHORT).show();
-            // Buraya geçiş kodu eklenecekse: startActivity(new Intent(getContext(), UpdateProfileActivity.class));
+            Intent intent = new Intent(getActivity(), ProfilGuncelleActivity.class);
+            startActivity(intent);
         });
+
 
         // SSS (FAQ) Butonu
         btnHelpFaq.setOnClickListener(v -> {
