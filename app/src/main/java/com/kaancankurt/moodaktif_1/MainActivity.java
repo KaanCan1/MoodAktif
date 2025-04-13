@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityBottomnavbarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Mevcut listener
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()){
-
                 case R.id.home:
                     replaceFragment(new HomeFragment());
                     break;
@@ -30,10 +30,15 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new ProfileFragment());
                     break;
             }
-
             return true;
         });
+
+        // Uygulama açıldığında HomeFragment’i otomatik yükle
+        if (savedInstanceState == null) {
+            binding.bottomNavigationView.setSelectedItemId(R.id.home);
+        }
     }
+
     private void replaceFragment(Fragment fragment){
 
         FragmentManager fragmentManager = getSupportFragmentManager();

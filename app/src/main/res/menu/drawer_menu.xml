@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Profil Bilgileri -->
+    <item
+        android:id="@+id/nav_profile"
+        android:title="@string/nav_profile"
+        android:icon="@drawable/profile" />
+
+    <!-- Uyku Takibi -->
+    <item
+        android:id="@+id/nav_sleep_tracking"
+        android:title="@string/nav_sleep_tracking"
+        android:icon="@drawable/ic_sleep_tracking" />
+
+    <!-- Okunan Kitaplar -->
+    <item
+        android:id="@+id/nav_read_books"
+        android:title="@string/nav_read_books"
+        android:icon="@drawable/ic_books" />
+
+    <!-- Günlük Modlar (Emoji) -->
+    <item
+        android:id="@+id/nav_daily_mood"
+        android:title="@string/nav_daily_mood"
+        android:icon="@drawable/ic_mood" />
+
+    <!-- Aktiviteler Öneri -->
+    <item
+        android:id="@+id/nav_activity_suggestions"
+        android:title="@string/nav_activity_suggestions"
+        android:icon="@drawable/ic_activity" />
+
+    <!-- Müzikler -->
+    <item
+        android:id="@+id/nav_music"
+        android:title="@string/nav_music"
+        android:icon="@drawable/ic_music" />
+
+    <!-- Egzersizler -->
+    <item
+        android:id="@+id/nav_exercises"
+        android:title="@string/nav_exercises"
+        android:icon="@drawable/ic_exercise" />
+</menu>
