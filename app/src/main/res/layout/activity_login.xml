@@ -82,6 +82,19 @@
                 android:textAlignment="center"
 
                 />
+            <TextView
+                android:id="@+id/textViewRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Üye değil misiniz? Üye olmak için tıklayınız"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="goToRegisterPage" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button"

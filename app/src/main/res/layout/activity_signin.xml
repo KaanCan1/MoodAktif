@@ -40,7 +40,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
@@ -61,7 +61,7 @@
                 android:textStyle="bold" />
 
             <EditText
-
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
@@ -82,16 +82,16 @@
                 android:textStyle="bold" />
 
             <EditText
-
+                android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/edittext_bg"
                 android:ems="10"
                 android:hint="Şifrenizi Giriniz"
-                android:inputType="textPersonName"
-                android:padding="12dp"
-                android:textSize="18sp" />
+                android:inputType="textPassword"
+            android:padding="12dp"
+            android:textSize="18sp" />
 
             <TextView
 
@@ -104,7 +104,7 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/editTextConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="12dp"
@@ -112,11 +112,11 @@
                 android:ems="10"
                 android:hint="Şifrenizi tekrar giriniz"
                 android:inputType="textPassword"
-                android:padding="12dp"
-                android:textSize="18sp" />
+            android:padding="12dp"
+            android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button"
+                android:id="@+id/buttonRegister"
                 style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

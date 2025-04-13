@@ -19,12 +19,12 @@ public class IntroActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         boolean firstStart = prefs.getBoolean(FIRST_START_KEY, true);
 
-        if (!firstStart) {
+        /*if (!firstStart) {
             // Eğer daha önce açıldıysa direkt LoginActivity'e git
             startActivity(new Intent(this, LoginActivity.class));
             finish();
             return;
-        }
+        }*/
 
         // 2) Aksi halde Intro ekranını göster
         setContentView(R.layout.activity_intro);
