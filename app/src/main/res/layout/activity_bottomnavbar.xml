@@ -38,10 +38,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             app:menu="@menu/bottom_nav_menu"
-            android:background="@android:color/white"
+            android:background="@color/white"
+            android:elevation="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:itemIconTint="@color/bottom_nav_color"
+            app:itemTextColor="@color/bottom_nav_color"
+            app:itemBackground="@drawable/bottom_nav_item_background"
+            app:labelVisibilityMode="labeled"
+            app:itemIconSize="24dp"
+            app:itemTextAppearanceActive="@style/BottomNavTextActive"
+            app:itemTextAppearanceInactive="@style/BottomNavTextInactive" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Drawer Menüsü -->

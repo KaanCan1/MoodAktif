@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 import com.kaancankurt.moodaktif_1.databinding.ActivityBottomnavbarBinding;
@@ -17,10 +17,21 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Oturum kontrolü
+        sessionManager = new SessionManager(this);
+        if (!sessionManager.isLoggedIn()) {
+            Intent intent = new Intent(this, IntroActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
+
         binding = ActivityBottomnavbarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
@@ -42,22 +53,22 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new ProfileFragment());
                     break;
                 case R.id.nav_sleep_tracking:
-                    //replaceFragment(new SleepFragment());
+                    startActivity(new Intent(this, SleepTrackingActivity.class));
                     break;
                 case R.id.nav_read_books:
-                    //replaceFragment(new BooksFragment());
+                    startActivity(new Intent(this, ReadBooksActivity.class));
                     break;
                 case R.id.nav_daily_mood:
-                    //replaceFragment(new DailyMoodFragment());
+                    startActivity(new Intent(this, DailyMoodActivity.class));
                     break;
                 case R.id.nav_activity_suggestions:
-                    //replaceFragment(new ActivitySuggestionsFragment());
+                    startActivity(new Intent(this, ActivitySuggestionsActivity.class));
                     break;
                 case R.id.nav_music:
-                    //replaceFragment(new MusicFragment());
+                    startActivity(new Intent(this, MusicActivity.class));
                     break;
                 case R.id.nav_exercises:
-                    //replaceFragment(new ExercisesFragment());
+                    startActivity(new Intent(this, ExercisesActivity.class));
                     break;
             }
             drawerLayout.closeDrawers();
@@ -91,5 +102,13 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.frameLayout, fragment)
                 .commit();
+    }
+
+    private void performLogout() {
+        sessionManager.logout();
+        Intent intent = new Intent(this, IntroActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
     }
 }

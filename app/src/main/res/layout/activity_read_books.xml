@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Okuduğunuz Kitapları Takip Edin"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="24dp" />
+
+            <EditText
+                android:id="@+id/editBookName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Kitap adını girin"
+                android:inputType="text"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btnAddBook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kitap Ekle"
+                android:backgroundTint="#FF7043"
+                android:textColor="@color/white"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:id="@+id/txtBookList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kitap listesi yükleniyor..."
+                android:textSize="14sp"
+                android:padding="16dp"
+                android:background="@color/cardview_light_background"
+                android:minHeight="200dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

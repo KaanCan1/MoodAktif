@@ -2,107 +2,90 @@ package com.kaancankurt.moodaktif_1;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.util.TypedValue;
-import android.view.ViewGroup;
-import android.graphics.drawable.GradientDrawable;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class FaqActivity extends AppCompatActivity {
-
-    private String[] questions = {
-            "MoodAktif uygulamasını nasıl kullanırım?",
-            "MoodAktif'e nasıl kayıt olurum?",
-            "MoodAktif nedir?",
-            "Psikolojik analizler neye göre yapılıyor?",
-            "Verilerim güvende mi?",
-            "MoodAktif anketi ne işe yarar?"
-    };
-
-    private String[] answers = {
-            "Uygulamayı açtıktan sonra ruh halinize göre anketi doldurabilir, önerileri görüntüleyebilirsiniz.",
-            "Ana ekranda 'Kayıt Ol' seçeneğine tıklayarak hesap oluşturabilirsiniz.",
-            "MoodAktif, ruh halinize göre öneriler sunan psikolojik analiz uygulamasıdır.",
-            "Anket cevaplarınıza göre öneri sistemimiz çalışır, verileriniz işlenir.",
-            "Evet, verileriniz gizlilik politikası kapsamında korunur.",
-            "Anket, ruh halinizi analiz ederek size uygun öneriler sunar."
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle("Sıkça Sorulan Sorular");
+        setContentView(R.layout.activity_faq);
 
-        ScrollView scrollView = new ScrollView(this);
-        LinearLayout container = new LinearLayout(this);
-        container.setOrientation(LinearLayout.VERTICAL);
-        container.setPadding(32, 32, 32, 32);
-
-        for (int i = 0; i < questions.length; i++) {
-            View qaView = createFaqItem(this, questions[i], answers[i]);
-            container.addView(qaView);
-        }
-
-        scrollView.addView(container);
-        setContentView(scrollView);
+        setupToolbar();
+        setupFaqItems();
     }
 
-    private View createFaqItem(Context context, String question, String answer) {
-        LinearLayout faqLayout = new LinearLayout(context);
-        faqLayout.setOrientation(LinearLayout.VERTICAL);
-        faqLayout.setPadding(40, 40, 40, 40);
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+        toolbar.setNavigationOnClickListener(v -> finish());
+    }
 
-        // Hafif köşeli, gri arka plan
-        GradientDrawable background = new GradientDrawable();
-        background.setCornerRadius(24);
-        background.setColor(0xFFF5F5F5); // Açık gri
-        faqLayout.setBackground(background);
-
-        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
+    private void setupFaqItems() {
+        setupFaqItem(
+                findViewById(R.id.faq_item_1),
+                findViewById(R.id.answer_1),
+                findViewById(R.id.arrow_1)
         );
-        layoutParams.setMargins(0, 0, 0, 32);
-        faqLayout.setLayoutParams(layoutParams);
 
-        // Soru metni + ok emoji
-        TextView questionText = new TextView(context);
-        questionText.setText("➕ " + question); // Başlangıçta + olarak gösteriyoruz
-        questionText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 17);
-        questionText.setTypeface(null, Typeface.BOLD);
-        questionText.setTextColor(0xFF000000);
+        setupFaqItem(
+                findViewById(R.id.faq_item_2),
+                findViewById(R.id.answer_2),
+                findViewById(R.id.arrow_2)
+        );
 
-        // Cevap metni
-        final TextView answerText = new TextView(context);
-        answerText.setText(answer);
-        answerText.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15);
-        answerText.setPadding(0, 16, 0, 0);
-        answerText.setTextColor(0xFF444444);
-        answerText.setVisibility(View.GONE);
+        setupFaqItem(
+                findViewById(R.id.faq_item_3),
+                findViewById(R.id.answer_3),
+                findViewById(R.id.arrow_3)
+        );
 
-        faqLayout.setClickable(true);
-        faqLayout.setFocusable(true);
+        setupFaqItem(
+                findViewById(R.id.faq_item_4),
+                findViewById(R.id.answer_4),
+                findViewById(R.id.arrow_4)
+        );
 
-        // Tıklama ile aç/kapa + ok yönünü değiştirme
-        faqLayout.setOnClickListener(v -> {
-            if (answerText.getVisibility() == View.GONE) {
-                answerText.setVisibility(View.VISIBLE);
-                questionText.setText("➖ " + question); // Açıldıysa eksi
+        setupFaqItem(
+                findViewById(R.id.faq_item_5),
+                findViewById(R.id.answer_5),
+                findViewById(R.id.arrow_5)
+        );
+    }
+
+    private void setupFaqItem(LinearLayout faqItem, TextView answer, ImageView arrow) {
+        faqItem.setOnClickListener(v -> {
+            if (answer.getVisibility() == View.GONE) {
+                // Expand
+                answer.setVisibility(View.VISIBLE);
+                rotateArrow(arrow, 0f, 180f);
             } else {
-                answerText.setVisibility(View.GONE);
-                questionText.setText("➕ " + question); // Kapalıysa artı
+                // Collapse
+                answer.setVisibility(View.GONE);
+                rotateArrow(arrow, 180f, 0f);
             }
         });
+    }
 
-        faqLayout.addView(questionText);
-        faqLayout.addView(answerText);
-
-        return faqLayout;
+    private void rotateArrow(ImageView arrow, float fromDegree, float toDegree) {
+        RotateAnimation rotateAnimation = new RotateAnimation(
+                fromDegree, toDegree,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF, 0.5f
+        );
+        rotateAnimation.setDuration(300);
+        rotateAnimation.setFillAfter(true);
+        arrow.startAnimation(rotateAnimation);
     }
 }

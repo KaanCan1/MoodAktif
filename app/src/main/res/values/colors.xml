@@ -15,4 +15,8 @@
     <color name="lightGrey">#eeecec</color>
     <color name="grey">#d7d6d7</color>
 
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_selected">#FF7043</color>
+    <color name="bottom_nav_unselected">#757575</color>
+
 </resources>

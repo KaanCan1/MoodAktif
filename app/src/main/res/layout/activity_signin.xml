@@ -15,117 +15,133 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="24dp">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
-                android:text="Hesap\nOluştur"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                android:textStyle="bold"
-
-                />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:text="Ad Soyad"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/orange_bg"
+                android:contentDescription="Moodaktif Logo"
+                android:padding="20dp"
+                android:src="@android:drawable/ic_dialog_info" />
+
+            <TextView
+                android:id="@+id/welcomeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:text="Hesap Oluşturun"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="28sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/welcomeSubtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:gravity="center"
+                android:text="Kişisel gelişim yolculuğunuza başlayın"
+                android:textColor="#666666"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextName"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_bg"
-                android:ems="10"
-                android:hint="Ad Soyad Giriniz"
+                android:hint="Ad Soyad"
                 android:inputType="textPersonName"
-                android:padding="12dp"
-                android:textSize="18sp" />
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Email"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:padding="16dp"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_bg"
-                android:ems="10"
-                android:hint="Email Giriniz"
-                android:inputType="textPersonName"
-                android:padding="12dp"
-                android:textSize="18sp" />
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Şifre"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:hint="E-posta Adresiniz"
+                android:inputType="textEmailAddress"
+                android:padding="16dp"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_bg"
-                android:ems="10"
-                android:hint="Şifrenizi Giriniz"
+                android:hint="Şifreniz (en az 6 karakter)"
                 android:inputType="textPassword"
-            android:padding="12dp"
-            android:textSize="18sp" />
-
-            <TextView
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Şifre Tekrar"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:padding="16dp"
+                android:textSize="16sp" />
 
             <EditText
                 android:id="@+id/editTextConfirmPassword"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="12dp"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_bg"
-                android:ems="10"
-                android:hint="Şifrenizi tekrar giriniz"
+                android:hint="Şifrenizi Tekrarlayın"
                 android:inputType="textPassword"
-            android:padding="12dp"
-            android:textSize="18sp" />
+                android:padding="16dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/privacyTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:text="Kayıt olarak gizlilik politikamızı ve kullanım şartlarımızı kabul ediyorsunuz."
+                android:textColor="#666666"
+                android:textSize="12sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/buttonRegister"
-                style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="32dp"
+                android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/orange_bg"
-                android:text="Kayıt Ol"
+                android:text="Hesap Oluştur"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/loginTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="12dp"
+                android:text="Zaten hesabınız var mı? Giriş yapın"
+                android:textColor="#FF7043"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/motivationTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#F5F5F5"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="🌟 Her güzel hikaye bir adımla başlar. Sizinki de bugün başlıyor!"
+                android:textColor="#424242"
+                android:textSize="14sp"
+                android:textStyle="italic" />
 
         </LinearLayout>
     </ScrollView>
@@ -135,7 +151,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
